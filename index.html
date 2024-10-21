@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="player">
+        <div class="track-info">
+            <span id="back-arrow">&#8592;</span>
+            <span id="song-name">You and I.mp3</span>
+            <span id="logo"></span>
+        </div>
+
+        <div class="album-art">
+            <div class="music-icon">&#9835;</div>
+        </div>
+
+        <div class="progress">
+            <span id="current-time">00:00</span>
+            <div id="progress-bar">
+                <div id="progress-filled"></div>
+            </div>
+            <span id="total-duration">05:57</span>
+        </div>
+
+        <div class="controls">
+            <button id="loop-btn">&#8635;</button>
+            <button id="prev-btn">&#9664;&#9664;</button>
+            <button id="play-btn">&#9654;</button>
+            <button id="next-btn">&#9654;&#9654;</button>
+            <button id="playlist-btn">&#9776;</button>
+        </div>
+
+        <div class="playlist">
+            <h3>Playlist</h3>
+            <div class="group-list">
+                <ul id="song-list">
+                    <li class="song-item active">Recording 2024-10-16 225212.mp4</li>
+                    <li class="song-item">don.mp3</li>
+                    <li class="song-item">Recording 2024-10-16 225212.mp4</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <audio id="audio-player" src="./Recording 2024-10-16 225212.mp4"></audio>
+    <script src="index.js"></script>
+</body>
+
+</html>

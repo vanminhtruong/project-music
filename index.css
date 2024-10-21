@@ -1,0 +1,239 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #ff4500, #ff6347, #ff7f50, #ff8c00);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+h3{
+    text-align: center;
+    font-size: 30px;
+}
+
+.player {
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(20px);
+    padding: 40px;
+    border-radius: 30px;
+    width: 380px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(255, 69, 0, 0.7);
+    transition: all 0.3s ease;
+}
+
+.player:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 40px rgba(255, 165, 0, 0.8);
+}
+
+.track-info {
+    margin-bottom: 15px;
+}
+
+.album-art {
+    background: linear-gradient(45deg, #ff4500, #ff8c00);
+    height: 220px;
+    width: 220px;
+    border-radius: 50%;
+    margin: 0 auto 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(255, 69, 0, 0.8);
+    animation: rotate 12s linear infinite;
+    border: 1px solid;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.music-icon {
+    font-size: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}
+
+/* ================================
+   Progress Bar Styles
+   Replacing <input type="range"> with <div>
+   ================================ */
+
+/* Container for the progress bar */
+#progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    margin: 20px 0;
+    transition: background 0.3s;
+    border: 1px solid;
+}
+
+/* Hover effect for the progress bar */
+#progress-bar:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Filled portion of the progress bar indicating current time */
+#progress-filled {
+    width: 0%;
+    height: 100%;
+    background: #ff6347;
+    border-radius: 4px;
+    transition: width 0.1s linear;
+}
+
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+button {
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: white;
+    font-size: 23px;
+    cursor: pointer;
+    padding: 16px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.3);
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.6);
+}
+
+#play-btn {
+    font-size: 36px;
+    padding: 25px;
+}
+
+.playlist {
+    margin-top: 40px;
+    text-align: left;
+    max-height: 220px;
+    padding-right: 15px;
+}
+
+.group-list {
+    height: 140px;
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.playlist ul {
+    list-style: none;
+}
+
+.song-item {
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.song-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+}
+
+.song-item.active {
+    background-color: rgba(255, 99, 71, 0.4);
+    font-weight: bold;
+}
+
+/* Hiệu ứng lửa cho nền */
+@keyframes fire {
+    0% {
+        background-position: 0% 100%;
+    }
+
+    50% {
+        background-position: 100% 0%;
+    }
+
+    100% {
+        background-position: 0% 100%;
+    }
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #800000, #ff4500, #ff6347, #ff7f50, #ff8c00, #ffa500);
+    background-size: 400% 400%;
+    animation: fire 15s ease infinite;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+@keyframes rainbow {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.player,
+button,
+#progress-filled {
+    animation: rainbow 15s linear infinite;
+}
+
+#song-name,
+#current-time,
+#total-duration {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
